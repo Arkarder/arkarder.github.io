@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+    <script type="text/javascript" src="//use.typekit.net/lye2res.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    
+    <title>Uptime Calendar · Your new favorite timesaver</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="uptime.css" rel="stylesheet">
+    
+    <style>
+    #video-demo {
+      height: 665px;
+      width: 340px;
+      background-image: url(hardware_iphone.png);
+      padding: 98px 42px;
+    }
+    ul.highlights li {
+      position: relative;
+      cursor: pointer;
+    }
+    ul.highlights li:hover img.play {
+      display: block;
+    }
+    ul.highlights li img.play {
+      height: 24px;
+      width: 24px;
+      position: absolute;
+      left: -36px;
+      top: 32px;
+      display: none;
+    }
+    </style>
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    $(function () {
+      var $video = $('video')[0];
+      var $highlights = $('ul.highlights li');
+      var times = [0.0, 18.0, 132.5, 197.0];
+      
+      setInterval(function () {
+        var t = $video.currentTime;
+        var i = -1;
+        for (; i < (times.length - 1); i++) {
+          if (times[i+1] > t) break;
+        }
+        $highlights.removeClass('selected');
+        $($highlights[i]).addClass('selected');
+      }, 0.3);
+      
+      $highlights.click(function () {
+        var i = $highlights.index(this);
+        $video.currentTime = times[i];
+      });
+    })
+    </script>
+  </head>
+
+    <div id="video-section" class="carousel slide">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-5 col-sm-6 col-lg-offset-1">
+            <center>
+              <div id="video-demo">
+                <video width="257" height="455" autoplay>
+                  <source src="demo.mp4" type="video/mp4" />
+                  <source src="demo.webm" type="video/webm" />
+                  <source src="demo.ogv" type="video/ogg" />
+                </video>
+              </div>
+              <img src="AppStore.png" width="135" height="40" alt="AppStore">
+            </center>
+          </div>
+          <div class="col-xs-1 visible-xs"></div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-offset-2 col-xs-10">
+            <h1>
+              <img id="uptime-icon" src="Uptime-Icon.png" alt="Uptime Icon">
+              <strong>Uptime</strong> Calendar
+            </h1>
+            <ul class="highlights">
+              <li class="selected">
+                <img class="play" src="play.png" />
+                <h3>Navigate <strong>pleasantly</strong> through weeks </h3>
+                <p>Uptime lets you easily and pleasantly navigate from week-to-week and from day-to-day.</p>
+              </li>
+              <li>
+                <img class="play" src="play.png" />
+                <h3>Create <strong>reusable</strong> events</h3>
+                <p>Uptime lets you create events that can be reused, and immediately schedule all the days that apply.</p>
+              </li>
+              <li>
+                <img class="play" src="play.png" />
+                <h3>Schedule <strong>multiple</strong> events, for <strong>multiple</strong> days</h3>
+                <p>Uptime lets you very quickly schedule multiple days worth of events in a matter of seconds, 
+                  without having to be a pro.</p>
+              </li>
+              <li>
+                <img class="play" src="play.png" />
+                <h3>Sync with your other calendars</h3>
+                <p>Uptime can sync all the events you create with one of your calendars (iCloud, Google, Microsoft Exchange, etc.) so 
+                  they can be viewed from your other devices.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="container marketing">
+
+      <div class="slogan row">
+        <div class="col-xs-12">
+          <center>Your new favorite timesaver</center>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-4">
+          <img class="img-circle" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-md-4">
+          <img class="img-circle" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image">
+          <h2>Heading</h2>
+          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-md-4">
+          <img class="img-circle" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2013 Mathieu D'Amours</p>
+      </footer>
+
+    </div><!-- /.container -->
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/holder.js"></script>
+  </body>
+</html>
