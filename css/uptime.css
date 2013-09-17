@@ -102,7 +102,7 @@ ul.highlights li h3 {
 #video-demo {
   height: 665px;
   width: 340px;
-  background-image: url(../hardware_iphone.png);
+  background-image: url("../hardware_iphone.png");
   padding: 98px 42px;
 }
 ul.highlights li {
