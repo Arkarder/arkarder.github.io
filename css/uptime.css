@@ -1,0 +1,122 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-bottom: 40px;
+}
+
+body {
+  background-color: white;
+}
+h1 {
+  padding-top: 20px;
+  color: #420000;
+  font-family: "myriad-pro-condensed";
+  font-size: 400%;
+}
+h2, p, a {
+  font-family: "myriad-pro";
+  color: #420000;
+}
+a {
+  opacity: 0.5;
+}
+a:hover {
+  opacity: 1;
+  color: #420000;
+}
+
+#video-section {
+  background-color: #ff9c1c;
+  background-image: 
+    -webkit-gradient(linear, center top, center bottom, from(#ffc052), to(#ff9c1c));
+  background-image: 
+    -moz-linear-gradient(center top, #ffc052, #ff9c1c);
+  
+  margin-bottom: 40px;
+  margin-top: 0px;
+  padding-bottom: 80px;
+  padding-top: 100px;
+}
+
+ul.highlights {
+  margin-top: 20px;
+  padding: 0;
+}
+ul.highlights li {
+  font-family: "myriad-pro";
+  list-style: none;
+  color: #420000;
+  opacity: 0.55;
+  transition-property: opacity;
+  transition-duration: 0.2s;
+  padding: 10px 0 0 0;
+  font-size: 120%;
+}
+ul.highlights li.selected {
+  opacity: 0.95;
+  transition-property: opacity;
+  transition-duration: 0.2s;
+}
+ul.highlights li h3 {
+  font-family: "myriad-pro";
+  color: #420000;
+}
+
+#uptime-icon {
+  float: left; 
+  margin-right: 10px; 
+  position: relative; 
+  top: -7px;
+  width: 76px;
+  height: 76px;
+}
+
+.slogan {
+  font-family: "myriad-pro";
+  font-weight: 300;
+  font-size: 200%;
+  color: #420000;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+@media (max-width: 992px)  {
+  h1 { font-size: 300%; }
+  ul.highlights li h3 {
+    font-size: 140%;
+  }
+  ul.highlights li {
+    font-size: 110%;
+    padding-top: 5px;
+  }
+  #uptime-icon {
+    position: relative; 
+    top: -7px;
+    width: 62px;
+    height: 62px;
+  }
+}
+
+#video-demo {
+  height: 665px;
+  width: 340px;
+  background-image: url(hardware_iphone.png);
+  padding: 98px 42px;
+}
+ul.highlights li {
+  position: relative;
+  cursor: pointer;
+}
+ul.highlights li:hover img.play {
+  display: block;
+}
+ul.highlights li img.play {
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  left: -36px;
+  top: 32px;
+  display: none;
+}
