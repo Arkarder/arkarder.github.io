@@ -30,6 +30,11 @@
       var $highlights = $('ul.highlights li');
       var times = [0.0, 18.0, 132.5, 197.0];
       
+      var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
+      if (iOS) {
+        $video.controls = true;
+      }
+      
       setInterval(function () {
         var t = $video.currentTime;
         var i = -1;
