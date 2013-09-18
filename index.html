@@ -40,14 +40,18 @@
       var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
       if (iOS) {
         $video.controls = true;
-      } else {
-        $highlights.css('cursor', 'pointer');
-        $highlights.mouseover(function (ev) {
-          $(this).addClass('hovering');
-        });
-        $highlights.mouseout(function (ev) {
-          $(this).removeClass('hovering');
-        });
+      }
+      if (!iOS || navigator.platform === 'iPad') {
+        if (!iOS) {
+          $highlights.css('cursor', 'pointer');
+          $highlights.mouseover(function (ev) {
+            $(this).addClass('hovering');
+          });
+          $highlights.mouseout(function (ev) {
+            $(this).removeClass('hovering');
+          });
+        }
+        
         $highlights.click(function () {
           var i = $highlights.index(this);
           $video.currentTime = times[i];
