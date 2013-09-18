@@ -127,7 +127,7 @@ ul.highlights li h3 {
     padding-top: 50px;
   }
 }
-@media (max-width: 768px)  {
+@media (max-width: 767px)  {
   .header .main {
     padding-left: 0px;
   }

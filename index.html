@@ -2,7 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=yes, minimum-scale=1.0, maximum-scale=2.0">
+    
+    <meta id="viewportMeta" name="viewport" content="width=420, user-scalable=yes">
+    <script type="text/javascript" charset="utf-8">
+      if (screen.width > 420) {
+        document.getElementById('viewportMeta').setAttribute('content', 'width=' + screen.width);
+      }
+    </script>
+    
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.png">
