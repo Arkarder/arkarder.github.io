@@ -12,6 +12,7 @@ body {
 
 .header h1 {
   color: #420000;
+  color: white;
   font-family: "myriad-pro-condensed";
   font-size: 400%;
   margin-bottom: 0;
@@ -20,6 +21,7 @@ body {
 .header p {
   font-size: 120%;
   margin-left: 88px;
+  color: white;
 }
 .header {
   margin-bottom: 20px;
@@ -41,12 +43,16 @@ a:hover {
 }
 
 #video-section {
+  /*
   background-color: #ff9c1c;
   background-image: 
     -webkit-gradient(linear, center top, center bottom, from(#ffc052), to(#ff9c1c));
   background-image: 
     -moz-linear-gradient(center top, #ffc052, #ff9c1c);
-  
+  */
+  background-image: url("../bg.jpg");
+  background-size: cover;
+  background-position: center;
   margin-bottom: 40px;
   margin-top: 0px;
   padding-bottom: 80px;
@@ -61,20 +67,25 @@ ul.highlights li {
   font-family: "myriad-pro";
   list-style: none;
   color: #420000;
-  opacity: 0.55;
+  color: white;
   transition-property: opacity;
   transition-duration: 0.2s;
-  padding: 10px 0 0 0;
+  border-radius: 12px;
+  padding: 1px 20px 5px 20px;
   font-size: 120%;
 }
+ul.highlights li p {
+  color: white;
+}
 ul.highlights li.selected {
-  opacity: 0.95;
   transition-property: opacity;
   transition-duration: 0.2s;
+  background-color: rgba(0,0,0,0.3);
 }
 ul.highlights li h3 {
   font-family: "myriad-pro";
   color: #420000;
+  color: white;
 }
 
 #uptime-icon {
