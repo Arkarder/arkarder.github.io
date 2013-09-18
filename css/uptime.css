@@ -74,6 +74,9 @@ ul.highlights li {
   padding: 1px 20px 5px 20px;
   font-size: 120%;
 }
+ul.highlights li h3 {
+  margin-top: 10px;
+}
 ul.highlights li p {
   color: white;
 }
@@ -155,9 +158,8 @@ ul.highlights li h3 {
 }
 ul.highlights li {
   position: relative;
-  cursor: pointer;
 }
-ul.highlights li:hover img.play {
+ul.highlights li.hovering img.play {
   display: block;
 }
 ul.highlights li img.play {

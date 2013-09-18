@@ -40,23 +40,30 @@
       var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
       if (iOS) {
         $video.controls = true;
+      } else {
+        $highlights.css('cursor', 'pointer');
+        $highlights.mouseover(function (ev) {
+          $(this).addClass('hovering');
+        });
+        $highlights.mouseout(function (ev) {
+          $(this).removeClass('hovering');
+        });
+        $highlights.click(function () {
+          var i = $highlights.index(this);
+          $video.currentTime = times[i];
+          $video.play();
+        });
+        
+        setInterval(function () {
+          var t = $video.currentTime;
+          var i = -1;
+          for (; i < (times.length - 1); i++) {
+            if (times[i+1] > t) break;
+          }
+          $highlights.removeClass('selected');
+          $($highlights[i]).addClass('selected');
+        }, 0.3);
       }
-      
-      setInterval(function () {
-        var t = $video.currentTime;
-        var i = -1;
-        for (; i < (times.length - 1); i++) {
-          if (times[i+1] > t) break;
-        }
-        $highlights.removeClass('selected');
-        $($highlights[i]).addClass('selected');
-      }, 0.3);
-      
-      $highlights.click(function () {
-        var i = $highlights.index(this);
-        $video.currentTime = times[i];
-        $video.play();
-      });
     })
     </script>
   </head>
@@ -87,7 +94,7 @@
           <div class="col-xs-1 visible-xs"></div>
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-offset-2 col-xs-10">
             <ul class="highlights">
-              <li class="selected">
+              <li>
                 <img class="play" src="play.png" />
                 <h3>Navigate <strong>pleasantly</strong> through weeks </h3>
                 <p>Uptime lets you easily and pleasantly navigate from week-to-week and from day-to-day.</p>
