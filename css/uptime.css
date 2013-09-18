@@ -68,7 +68,7 @@ ul.highlights li {
   list-style: none;
   color: #420000;
   color: white;
-  transition-property: opacity;
+  transition-property: background-color;
   transition-duration: 0.2s;
   border-radius: 12px;
   padding: 1px 20px 5px 20px;
@@ -78,7 +78,7 @@ ul.highlights li p {
   color: white;
 }
 ul.highlights li.selected {
-  transition-property: opacity;
+  transition-property: background-color;
   transition-duration: 0.2s;
   background-color: rgba(0,0,0,0.3);
 }
