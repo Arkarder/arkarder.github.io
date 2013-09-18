@@ -132,8 +132,8 @@ ul.highlights li h3 {
     padding-left: 0px;
   }
 }
-@media (max-width: 480px) {
-  .container { width: 480px; }
+@media (max-width: 420px) {
+  .container { width: 420px; }
 }
 
 #video-demo {
