@@ -9,12 +9,25 @@ body {
 body {
   background-color: white;
 }
-h1 {
-  padding-top: 20px;
+
+.header h1 {
   color: #420000;
   font-family: "myriad-pro-condensed";
   font-size: 400%;
+  margin-bottom: 0;
+  margin-left: 86px;
 }
+.header p {
+  font-size: 120%;
+  margin-left: 88px;
+}
+.header {
+  margin-bottom: 20px;
+}
+.header .main {
+  padding-left: 50px;
+}
+
 h2, p, a {
   font-family: "myriad-pro";
   color: #420000;
@@ -68,7 +81,7 @@ ul.highlights li h3 {
   float: left; 
   margin-right: 10px; 
   position: relative; 
-  top: -7px;
+  top: 10px;
   width: 76px;
   height: 76px;
 }
@@ -83,7 +96,10 @@ ul.highlights li h3 {
 }
 
 @media (max-width: 992px)  {
-  h1 { font-size: 300%; }
+  .header h1 { 
+    font-size: 300%; 
+    margin-left: 72px;
+  }
   ul.highlights li h3 {
     font-size: 140%;
   }
@@ -93,9 +109,27 @@ ul.highlights li h3 {
   }
   #uptime-icon {
     position: relative; 
-    top: -7px;
     width: 62px;
     height: 62px;
+  }
+  .header p {
+    font-size: 110%;
+    margin-left: 74px;
+    line-height: 120%;
+  }
+  .header {
+    margin-bottom: 10px;
+  }
+  .header .main {
+    padding-left: 40px;
+  }
+  #video-section {
+    padding-top: 50px;
+  }
+}
+@media (max-width: 768px)  {
+  .header .main {
+    padding-left: 0px;
   }
 }
 
