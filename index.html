@@ -35,7 +35,7 @@
     $(function () {
       var $video = $('video')[0];
       var $highlights = $('ul.highlights li');
-      var times = [0.0, 18.0, 132.5, 197.0];
+      var times = [4, 20, 56, 80];
       
       var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
       if (iOS) {
@@ -86,7 +86,7 @@
           <div class="col-lg-4 col-lg-offset-1 col-md-5 col-sm-6 ">
             <center>
               <div id="video-demo">
-                <video width="257" height="455" autoplay>
+                <video width="257" height="455" autoplay poster="imgs/poster.jpg">
                   <source src="demo.mp4" type="video/mp4" />
                   <source src="demo.webm" type="video/webm" />
                   <source src="demo.ogv" type="video/ogg" />
@@ -154,7 +154,9 @@
       
       <div class="row contact">
         <div class="col-md-12">
-          
+          <center>
+            
+          </center>
         </div>
       </div>
       
