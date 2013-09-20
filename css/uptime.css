@@ -9,9 +9,13 @@ body {
 body {
   background-color: white;
 }
-
+p {
+  font-size: 120%;
+}
+footer p {
+  font-size: 95%;
+}
 .header h1 {
-  color: #420000;
   color: white;
   font-family: "myriad-pro-condensed";
   font-size: 400%;
@@ -19,7 +23,6 @@ body {
   margin-left: 86px;
 }
 .header p {
-  font-size: 120%;
   margin-left: 88px;
   color: white;
 }
@@ -32,14 +35,14 @@ body {
 
 h2, p, a {
   font-family: "myriad-pro";
-  color: #420000;
+  color: #222;
 }
 a {
   opacity: 0.5;
 }
 a:hover {
   opacity: 1;
-  color: #420000;
+  color: #222;
 }
 
 #video-section {
@@ -66,7 +69,6 @@ ul.highlights {
 ul.highlights li {
   font-family: "myriad-pro";
   list-style: none;
-  color: #420000;
   color: white;
   transition-property: background-color;
   transition-duration: 0.2s;
@@ -87,7 +89,6 @@ ul.highlights li.selected, ul.highlights li.selected.hovering {
 }
 ul.highlights li h3 {
   font-family: "myriad-pro";
-  color: #420000;
   color: white;
 }
 
@@ -104,7 +105,7 @@ ul.highlights li h3 {
   font-family: "myriad-pro";
   font-weight: 300;
   font-size: 200%;
-  color: #420000;
+  color: #222;
   padding-top: 20px;
   padding-bottom: 40px;
 }
@@ -140,6 +141,9 @@ ul.highlights li h3 {
   #video-section {
     padding-top: 50px;
   }
+  .use-cases > div {
+    padding: 20px 40px;
+  }
 }
 @media (max-width: 767px)  {
   .header .main {
@@ -149,7 +153,19 @@ ul.highlights li h3 {
 @media (max-width: 420px) {
   .container { width: 420px; }
 }
-
+.use-cases > div img {
+  opacity: 0.2;
+  transition-property: opacity;
+  transition-duration: 0.2s;
+}
+.use-cases > div:hover img {
+  opacity: 0.4;
+  transition-property: opacity;
+  transition-duration: 0.2s;
+}
+.use-cases > div p, .use-cases > div h2 {
+  text-align: center;
+}
 #video-demo {
   height: 665px;
   width: 340px;
