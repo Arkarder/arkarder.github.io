@@ -159,6 +159,12 @@ ul.highlights li h3 {
   transition-property: opacity;
   transition-duration: 0.2s;
 }
+
+.contact a {
+  font-size: 120%;
+  margin: 0 10px;
+}
+
 .use-cases > div:hover img {
   opacity: 0.4;
   transition-property: opacity;
