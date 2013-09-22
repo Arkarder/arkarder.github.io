@@ -2,17 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta id="viewportMeta" name="viewport" content="width=420, user-scalable=yes">
+    <script type="text/javascript" charset="utf-8">
+      if (screen.width > 420) {
+        document.getElementById('viewportMeta').setAttribute('content', 'width=' + screen.width);
+      }
+    </script>
+    
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.png">
     <script type="text/javascript" src="//use.typekit.net/lye2res.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     
-    <title>Uptime Calendar · Your new favorite timesaver</title>
+    <title>Uptime Calendar &middot; The calendar app you'll actually use</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -28,30 +36,55 @@
     $(function () {
       var $video = $('video')[0];
       var $highlights = $('ul.highlights li');
-      var times = [0.0, 18.0, 132.5, 197.0];
+      var times = [3, 22, 66, 87, 109, 129];
       
-      setInterval(function () {
-        var t = $video.currentTime;
-        var i = -1;
-        for (; i < (times.length - 1); i++) {
-          if (times[i+1] > t) break;
+      var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
+      if (iOS) {
+        $video.controls = true;
+      }
+      if (!iOS || navigator.platform === 'iPad') {
+        if (!iOS) {
+          $highlights.css('cursor', 'pointer');
+          $highlights.mouseover(function (ev) {
+            $(this).addClass('hovering');
+          });
+          $highlights.mouseout(function (ev) {
+            $(this).removeClass('hovering');
+          });
         }
-        $highlights.removeClass('selected');
-        $($highlights[i]).addClass('selected');
-      }, 0.3);
-      
-      $highlights.click(function () {
-        var i = $highlights.index(this);
-        $video.currentTime = times[i];
-      });
+        
+        $highlights.click(function () {
+          var i = $highlights.index(this);
+          $video.currentTime = times[i];
+          $video.play();
+        });
+        
+        setInterval(function () {
+          var t = $video.currentTime;
+          var i = -1;
+          for (; i < (times.length - 1); i++) {
+            if (times[i+1] > t) break;
+          }
+          $highlights.removeClass('selected');
+          $($highlights[i]).addClass('selected');
+        }, 0.3);
+      }
     })
     </script>
   </head>
 
     <div id="video-section" class="carousel slide">
       <div class="container">
+        <div class="row header">
+          <div class="col-xs-1 visible-xs"></div>
+          <div class="main col-lg-6 col-lg-offset-1 col-md-8 col-sm-8 col-xs-10">
+            <img id="uptime-icon" src="Uptime-Icon.png" alt="Uptime Icon">
+            <h1><strong>Uptime</strong> Calendar</h1>
+            <p>Uptime Calendar is a universal, intuitive, dedicated app for planning key activities like work shifts, sports sessions, studying, music practice, or beers with friends.</p>
+          </div>
+        </div>
         <div class="row">
-          <div class="col-lg-4 col-md-5 col-sm-6 col-lg-offset-1">
+          <div class="col-lg-4 col-lg-offset-1 col-md-5 col-sm-6 ">
             <center>
               <div id="video-demo">
                 <video width="257" height="455" autoplay>
@@ -60,37 +93,35 @@
                   <source src="demo.ogv" type="video/ogg" />
                 </video>
               </div>
-              <img src="AppStore.png" width="135" height="40" alt="AppStore">
+              <a href="https://itunes.apple.com/ca/app/uptime-calendar/id703625894?mt=8"><img src="AppStore.png" width="135" height="40" alt="AppStore"></a>
             </center>
           </div>
           <div class="col-xs-1 visible-xs"></div>
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-offset-2 col-xs-10">
-            <h1>
-              <img id="uptime-icon" src="Uptime-Icon.png" alt="Uptime Icon">
-              <strong>Uptime</strong> Calendar
-            </h1>
             <ul class="highlights">
-              <li class="selected">
-                <img class="play" src="play.png" />
-                <h3>Navigate <strong>pleasantly</strong> through weeks </h3>
-                <p>Uptime lets you easily and pleasantly navigate from week-to-week and from day-to-day.</p>
+              <li>
+                <h3>Navigate <strong>smoothly</strong> and <strong>intuitively</strong></h3>
+                <p>Through days, weeks and months. It'll soon be second nature.</p>
               </li>
               <li>
-                <img class="play" src="play.png" />
-                <h3>Create <strong>reusable</strong> events</h3>
-                <p>Uptime lets you create events that can be reused, and immediately schedule all the days that apply.</p>
+                <h3>Easy repeats</h3>
+                <p>Create an event and save it. Then schedule as often as you like.</p>
               </li>
               <li>
-                <img class="play" src="play.png" />
-                <h3>Schedule <strong>multiple</strong> events, for <strong>multiple</strong> days</h3>
-                <p>Uptime lets you very quickly schedule multiple days worth of events in a matter of seconds, 
-                  without having to be a pro.</p>
+                <h3>Multiple events, multiple days</h3>
+                <p>Schedule a whole week in seconds.</p>
               </li>
               <li>
-                <img class="play" src="play.png" />
                 <h3>Sync with your other calendars</h3>
-                <p>Uptime can sync all the events you create with one of your calendars (iCloud, Google, Microsoft Exchange, etc.) so 
-                  they can be viewed from your other devices.</p>
+                <p>Sync with other calendars (and not just on your iPhone).</p>
+              </li>
+              <li>
+                <h3>Add notes</h3>
+                <p>For those crucial little bits of info.</p>
+              </li>
+              <li>
+                <h3>When life gets complicated</h3>
+                <p>When times and details vary, Uptime Calendar copes beautifully.</p>
               </li>
             </ul>
           </div>
@@ -103,37 +134,66 @@
 
       <div class="slogan row">
         <div class="col-xs-12">
-          <center>Your new favorite timesaver</center>
+          <center>The calendar app you'll actually use!</center>
         </div>
       </div>
       
-      <div class="row">
+      <div class="row use-cases">
         <div class="col-md-4">
-          <img class="img-circle" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-        </div><!-- /.col-lg-4 -->
+          <center><img src="imgs/sun.png" height="128" width="128"></center>
+          <h2>Work and shifts</h2>
+          <p>Regular shifts or odd hours, Uptime Calendar keeps track.</p>
+        </div>
         <div class="col-md-4">
-          <img class="img-circle" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-        </div><!-- /.col-lg-4 -->
+          <center><img src="imgs/beer.png" height="128" width="128"></center>
+          <h2>Social life</h2>
+          <p>Less time planning and more time having fun.</p>
+        </div>
         <div class="col-md-4">
-          <img class="img-circle" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
+          <center><img src="imgs/shoe.png" height="128" width="128"></center>
+          <h2>Fitness</h2>
+          <p>Plan all your sports, gym sessions, training and nutrition.</p>
+        </div>
+      </div>
+      
+      <div class="row contact">
+        <div class="col-md-12">
+          <center>
+            <a href="http://support.uptime-app.com"><span class="glyphicon glyphicon-heart"></span> Support</a> &middot; 
+            <a href="http://twitter.com/uptime_app"><i class="icon-twitter"></i> Follow us</a>
+          </center>
+        </div>
+      </div>
+      
+      <hr>
 
       <!-- FOOTER -->
       <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2013 Mathieu D'Amours</p>
+        <p class="pull-right"><a href="#">Back to top</a>
+        </p>
+        <p>
+          &copy; 2013 <a href="http://forest.io">Forest.io</a> &middot;
+          Image by <a href="http://madebyvadim.com/">Vadim Sherbakov</a>, seen on <a href="http://unsplash.com">unsplash</a>
+        </p>
       </footer>
 
     </div><!-- /.container -->
 
     <script src="js/bootstrap.min.js"></script>
     <script src="js/holder.js"></script>
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-25323896-3']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
   </body>
 </html>

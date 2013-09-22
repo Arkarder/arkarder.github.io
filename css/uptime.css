@@ -9,31 +9,53 @@ body {
 body {
   background-color: white;
 }
-h1 {
-  padding-top: 20px;
-  color: #420000;
+p {
+  font-size: 120%;
+}
+footer p {
+  font-size: 95%;
+}
+.header h1 {
+  color: white;
   font-family: "myriad-pro-condensed";
   font-size: 400%;
+  margin-bottom: 0;
+  margin-left: 86px;
 }
+.header p {
+  margin-left: 88px;
+  color: white;
+}
+.header {
+  margin-bottom: 20px;
+}
+.header .main {
+  padding-left: 50px;
+}
+
 h2, p, a {
   font-family: "myriad-pro";
-  color: #420000;
+  color: #222;
 }
 a {
   opacity: 0.5;
 }
 a:hover {
   opacity: 1;
-  color: #420000;
+  color: #222;
 }
 
 #video-section {
+  /*
   background-color: #ff9c1c;
   background-image: 
     -webkit-gradient(linear, center top, center bottom, from(#ffc052), to(#ff9c1c));
   background-image: 
     -moz-linear-gradient(center top, #ffc052, #ff9c1c);
-  
+  */
+  background-image: url("../bg.jpg");
+  background-size: cover;
+  background-position: center;
   margin-bottom: 40px;
   margin-top: 0px;
   padding-bottom: 80px;
@@ -47,28 +69,35 @@ ul.highlights {
 ul.highlights li {
   font-family: "myriad-pro";
   list-style: none;
-  color: #420000;
-  opacity: 0.55;
-  transition-property: opacity;
+  color: white;
+  transition-property: background-color;
   transition-duration: 0.2s;
-  padding: 10px 0 0 0;
+  border-radius: 12px;
+  padding: 1px 20px 5px 20px;
   font-size: 120%;
 }
-ul.highlights li.selected {
-  opacity: 0.95;
-  transition-property: opacity;
+ul.highlights li h3 {
+  margin-top: 10px;
+  font-size: 180%;
+}
+ul.highlights li p {
+  color: white;
+}
+ul.highlights li.selected, ul.highlights li.selected.hovering {
+  transition-property: background-color;
   transition-duration: 0.2s;
+  background-color: rgba(0,0,0,0.3);
 }
 ul.highlights li h3 {
   font-family: "myriad-pro";
-  color: #420000;
+  color: white;
 }
 
 #uptime-icon {
   float: left; 
   margin-right: 10px; 
   position: relative; 
-  top: -7px;
+  top: 10px;
   width: 76px;
   height: 76px;
 }
@@ -77,13 +106,16 @@ ul.highlights li h3 {
   font-family: "myriad-pro";
   font-weight: 300;
   font-size: 200%;
-  color: #420000;
+  color: #222;
   padding-top: 20px;
   padding-bottom: 40px;
 }
 
 @media (max-width: 992px)  {
-  h1 { font-size: 300%; }
+  .header h1 { 
+    font-size: 300%; 
+    margin-left: 72px;
+  }
   ul.highlights li h3 {
     font-size: 140%;
   }
@@ -93,12 +125,54 @@ ul.highlights li h3 {
   }
   #uptime-icon {
     position: relative; 
-    top: -7px;
     width: 62px;
     height: 62px;
   }
+  .header p {
+    font-size: 110%;
+    margin-left: 74px;
+    line-height: 120%;
+  }
+  .header {
+    margin-bottom: 10px;
+  }
+  .header .main {
+    padding-left: 40px;
+  }
+  #video-section {
+    padding-top: 50px;
+  }
+  .use-cases > div {
+    padding: 20px 40px;
+  }
+}
+@media (max-width: 767px)  {
+  .header .main {
+    padding-left: 0px;
+  }
+}
+@media (max-width: 420px) {
+  .container { width: 420px; }
+}
+.use-cases > div img {
+  opacity: 0.2;
+  transition-property: opacity;
+  transition-duration: 0.2s;
 }
 
+.contact a {
+  font-size: 120%;
+  margin: 0 10px;
+}
+
+.use-cases > div:hover img {
+  opacity: 0.4;
+  transition-property: opacity;
+  transition-duration: 0.2s;
+}
+.use-cases > div p, .use-cases > div h2 {
+  text-align: center;
+}
 #video-demo {
   height: 665px;
   width: 340px;
@@ -107,16 +181,17 @@ ul.highlights li h3 {
 }
 ul.highlights li {
   position: relative;
-  cursor: pointer;
 }
-ul.highlights li:hover img.play {
-  display: block;
-}
+ul.highlights li.hovering {
+  background-color: rgba(0,0,0,0.15);
+  transition-property: opacity;
+  transition-duration: 0.2s;
+} /*
 ul.highlights li img.play {
   height: 24px;
   width: 24px;
   position: absolute;
   left: -36px;
   top: 32px;
-  display: none;
-}
+  opacity: 0;
+} */
