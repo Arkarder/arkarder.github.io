@@ -20,58 +20,17 @@
     <title>Uptime Calendar &middot; The calendar app you'll actually use</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <link href="css/font-awesome.min.css" rel="stylesheet"> -->
+    <link href="assets/uptime.min.css" rel="stylesheet">
+    
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="../../assets/js/html5shiv.js"></script>
       <script src="../../assets/js/respond.min.js"></script>
     <![endif]-->
 
-    <!-- Custom styles for this template -->
-    <link href="css/uptime.css" rel="stylesheet">
-    
-    <script src="js/jquery.js"></script>
-    <script type="text/javascript" charset="utf-8">
-    $(function () {
-      var $video = $('video')[0];
-      var $highlights = $('ul.highlights li');
-      var times = [3, 22, 66, 87, 109, 129];
-      
-      var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
-      if (iOS) {
-        $video.controls = true;
-      }
-      if (!iOS || navigator.platform === 'iPad') {
-        if (!iOS) {
-          $highlights.css('cursor', 'pointer');
-          $highlights.mouseover(function (ev) {
-            $(this).addClass('hovering');
-          });
-          $highlights.mouseout(function (ev) {
-            $(this).removeClass('hovering');
-          });
-        }
-        
-        $highlights.click(function () {
-          var i = $highlights.index(this);
-          $video.currentTime = times[i];
-          $video.play();
-        });
-        
-        setInterval(function () {
-          var t = $video.currentTime;
-          var i = -1;
-          for (; i < (times.length - 1); i++) {
-            if (times[i+1] > t) break;
-          }
-          $highlights.removeClass('selected');
-          $($highlights[i]).addClass('selected');
-        }, 0.3);
-      }
-    })
-    </script>
+    <script src="assets/uptime.min.js"></script>
   </head>
     <div id="top-header">
       <div class="container">
@@ -185,9 +144,6 @@
       </footer>
 
     </div><!-- /.container -->
-
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/holder.js"></script>
     
     <script type="text/javascript">
 
