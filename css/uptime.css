@@ -186,12 +186,24 @@ ul.highlights li.hovering {
   background-color: rgba(0,0,0,0.15);
   transition-property: opacity;
   transition-duration: 0.2s;
-} /*
-ul.highlights li img.play {
-  height: 24px;
-  width: 24px;
+}
+
+#top-header {
   position: absolute;
-  left: -36px;
-  top: 32px;
-  opacity: 0;
-} */
+  z-index: 10;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+}
+#support {
+  padding: 5px 10px;
+  background-color: black;
+  border-radius: 0 0 6px 6px;
+}
+#support a, #support i {
+  color: white;
+  font-size: 120%;
+}
+#support i {
+  margin-right: 3px;
+}
